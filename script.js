@@ -375,9 +375,17 @@ function Ajuda() {
     const divTexto = document.createElement("div");
     divTexto.className = "painel-ajuda";
 
-    var texto = document.createElement("p");
+    var texto = document.createElement("h1");
+    texto.style.textAlign = "center";
+    texto.innerHTML = "REGRAS";
+    divTexto.appendChild(texto);
+
+    texto = document.createElement("p");
     texto.innerHTML = "Cada jogador recebe 12 peças.";
     divTexto.appendChild(texto);
+
+    // Cria espaço entre as linhas
+    divTexto.appendChild(document.createElement("br"));
 
     texto = document.createElement("p");
     texto.innerHTML = "No seu turno, ao menos uma de três ações deve acontecer:";
@@ -388,17 +396,33 @@ function Ajuda() {
     divTexto.appendChild(texto);
 
     texto = document.createElement("p");
-    texto.innerHTML = `2. Comer uma peça do adversário
-    (Se você não tiver colocado uma peça,
-    não poderá colocar após ter comido outra peça)
-    (Apenas uma ação de comer pode acontecer por turno)`;
+    texto.innerHTML = "2. Comer uma peça do adversário";
     divTexto.appendChild(texto);
 
+    var lista = document.createElement("ul");
+    texto = document.createElement("li");
+    texto.innerHTML = "Se você não tiver colocado uma peça, não poderá colocar após ter comido outra peça";
+    lista.appendChild(texto);
+
+    texto = document.createElement("li");
+    texto.innerHTML = "Apenas uma ação de comer pode acontecer por turno";
+    lista.appendChild(texto);
+
+    divTexto.appendChild(lista);
+
     texto = document.createElement("p");
-    texto.innerHTML = `3. Substituir uma peça comida.
-    (Após comer uma peça adversária, você pode colocar uma das
-    suas peças no lugar da peça comida).`;
+    texto.innerHTML = "3. Substituir uma peça comida."
     divTexto.appendChild(texto);
+
+    lista = document.createElement("ul");
+    texto = document.createElement("li");
+    texto.innerHTML = "Após comer uma peça adversária, você pode colocar uma das suas peças no lugar da peça comida";
+    lista.appendChild(texto);
+
+    divTexto.appendChild(lista);
+
+    // Cria espaço entre as linhas
+    divTexto.appendChild(document.createElement("br"));
 
     texto = document.createElement("p");
     texto.innerHTML = "Ganha o primeiro jogador a completar uma linha, coluna ou diagonal com suas peças.";
@@ -406,6 +430,14 @@ function Ajuda() {
 
     texto = document.createElement("p");
     texto.innerHTML = "Se um jogador não tiver mais peças, a vitória é do jogador que ainda tiver peças.";
+    divTexto.appendChild(texto);
+
+    texto = document.createElement("p");
+    texto.innerHTML = "Se um jogador não tiver mais peças, mas ele tiver completado uma sequência de peças, ele ganha.";
+    divTexto.appendChild(texto);
+
+    texto = document.createElement("p");
+    texto.innerHTML = "É considerado empate quando todo o tabuleiro tiver sido preenchido mas nenhum jogador tiver ganhado.";
     divTexto.appendChild(texto);
 
     divWrapper.appendChild(divTexto);
