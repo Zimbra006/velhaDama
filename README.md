@@ -1,12 +1,13 @@
-## Velha Dama
+# Velha Dama
 Jogo desenvolvido como parte do processo seletivo para o estágio para a Escola ECMI da FGV.
 
-# Objetivo
+## Objetivo
 Completar uma linha, coluna ou diagonal com suas peças.
 
-# Regras
+## Regras
 No seu turno, coloque, coma e substitua peças para alcançar a vitória!
-Mais detalhes podem ser encotrados no arquivo [a relative link](regras.txt).
+<br>
+Mais detalhes podem ser encotrados no arquivo de [regras](regras.txt).
 
-# Site
-Acesse [a link](https://zimbra006.github.io/velhaDama/) se quiser jogar!
+## Site
+Acesse [o site](https://zimbra006.github.io/velhaDama/) se quiser jogar!
