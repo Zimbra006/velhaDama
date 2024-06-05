@@ -60,6 +60,9 @@ botaoTurno.addEventListener("click", TrocaTurno);
 botaoReiniciar.addEventListener("click", ReiniciarJogo);
 botaoAjuda.addEventListener("click", Ajuda);
 
+// Mostra o painel de regras no começo
+Ajuda();
+
 // Atualiza os divs para o tabuleiro
 for (let i = 0; i < 16; i++) {
     const div = document.getElementById("peca" + (i).toString());
@@ -261,8 +264,8 @@ function Vitoria() {
     vitoria.appendChild(div);
 
     div = document.createElement("div");
-    div.innerHTML = turnoJogador2 ? "LARANJAS" : "VERDES";
-    div.className = "cor-jogador-" + ((+!turnoJogador2) + 1).toString();
+    div.innerHTML = !turnoJogador2 ? "LARANJAS" : "VERDES";
+    div.className = "cor-jogador-" + ((+turnoJogador2) + 1).toString();
     vitoria.appendChild(div);
 
     gameBoard.style.pointerEvents = "none";
