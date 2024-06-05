@@ -115,7 +115,9 @@ for (let i = 0; i < 16; i++) {
         if (ChecarVitoriaPecas(i)) // Ganhou colocando peça
             Vitoria(turnoJogador2);
         else if (ChecarVitoriaExausto()) // Perdeu todas as peças
-            Vitoria(!turnoJogador2); 
+            Vitoria(!turnoJogador2);
+        else if (ChecarEmpate()) // Nenhum dos dois ganhou
+            Empate();
     }
 }
 
@@ -294,6 +296,25 @@ function Vitoria(jogador) {
     div = document.createElement("div");
     div.innerHTML = !jogador ? "LARANJAS" : "VERDES";
     div.className = "cor-jogador-" + ((+jogador) + 1).toString();
+    vitoria.appendChild(div);
+
+    gameBoard.style.pointerEvents = "none";
+}
+
+function ChecarEmpate() {
+    // Checa se todos os espaços estão preenchidos
+    for (let i = 0; i < tabuleiro.length; i++) {
+        if (tabuleiro[i] == 2) return false;
+    }
+
+    return true;
+}
+
+function Empate() {
+
+    // Imprime empate na tela e impede de clicar no tabuleiro
+    let div = document.createElement("div");
+    div.innerHTML = "EMPATE";
     vitoria.appendChild(div);
 
     gameBoard.style.pointerEvents = "none";
