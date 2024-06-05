@@ -114,6 +114,7 @@ function ColocarPeca(div, posicao) {
     tabuleiro[posicao] = +turnoJogador2; // Preenche o espaço no tabuleiro de acordo com o turno
 
     div.style.backgroundColor = cores[+turnoJogador2];
+    div.style.border = "0px solid black"; // Reinicia a borda caso ela tenha sido sinalizada
 
     podeColocarPeca = false;
 
@@ -194,12 +195,16 @@ function ComerPeca(divComida, posicao) {
     
     // Indicar que peça foi comida, para ser substituida
     pecaSubstituir = posicao;
+
+    // Indicar que pode colocar peça no tabuleiro
+    let rgbValues = cores[+turnoJogador2].substring(4, cores[+turnoJogador2].length - 1);
+    divComida.style.border = "5px solid rgba(" + rgbValues + ", 0.3)";
 }
 
 function ReiniciarFlagsComer() {
     // Voltar a borda da peça selecionada ao normal, se tiver alguma peça selecionada
     let divSelecionado = document.getElementById("peca" + pecaSelecionada.toString());
-    if (divSelecionado) divSelecionado.style.border = "1px solid black";
+    if (divSelecionado) divSelecionado.style.border = "0px solid black";
 
     // Limpar as flags para a próxima seleção
     pecaSelecionada = -1;
