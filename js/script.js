@@ -425,7 +425,7 @@ function Ajuda() {
     divTemp.style.display = "flex";
 
     texto = document.createElement("p");
-    texto.innerHTML = "Para terminar seu turno, clique no botão";
+    texto.innerHTML = "Para terminar seu turno, clique em";
     divTemp.appendChild(texto);
 
     texto = document.createElement("span");
@@ -457,7 +457,7 @@ function Ajuda() {
     divTemp.style.display = "flex";
 
     texto = document.createElement("p");
-    texto.innerHTML = "Para reiniciar o jogo, clique no botão";
+    texto.innerHTML = "Para reiniciar o jogo, clique em";
     divTemp.appendChild(texto);
 
     texto = document.createElement("span");
