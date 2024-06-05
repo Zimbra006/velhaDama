@@ -115,7 +115,7 @@ img {
 }
 
 .game-item {
-    width: 100%;
+    width: 90%;
     height: 90%;
     background-color: var(--board-grey);
     border-radius: 50px;
