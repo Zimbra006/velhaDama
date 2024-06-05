@@ -384,6 +384,10 @@ function Ajuda() {
     texto.innerHTML = "Cada jogador possuí 12 peças.";
     divTexto.appendChild(texto);
 
+    texto = document.createElement("p");
+    texto.innerHTML = "O primeiro jogador é o ganhador de uma rodada de pedra-papel-tesoura.";
+    divTexto.appendChild(texto);
+
     // Cria espaço entre as linhas
     divTexto.appendChild(document.createElement("br"));
 
