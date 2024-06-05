@@ -54,6 +54,8 @@ const vitoria = document.getElementById("vitoria");
 const botaoTurno = document.getElementById("acabarTurno");
 const botaoReiniciar = document.getElementById("reiniciarJogo");
 const botaoAjuda = document.getElementById("ajuda");
+const contadorLaranja = document.getElementById("contador-laranja");
+const contadorVerde = document.getElementById("contador-verde");
 
 // Atualizar a funcionalidade dos botões
 botaoTurno.addEventListener("click", TrocaTurno);
@@ -74,8 +76,6 @@ for (let i = 0; i < 16; i++) {
             // Se a posição estiver desocupada e colocar
             // uma peça ali for válido de acordo com as regras
             ColocarPeca(div, i);
-
-            if (ChecarVitoriaExausto()) Vitoria();
 
             ReiniciarFlagsComer();
 
@@ -106,7 +106,12 @@ for (let i = 0; i < 16; i++) {
             Erro(div);
         }
 
-        if (ChecarVitoriaPecas(i)) Vitoria();
+        console.log(tabuleiro);
+
+        if (ChecarVitoriaPecas(i)) // Ganhou colocando peça
+            Vitoria(turnoJogador2);
+        else if (ChecarVitoriaExausto()) // Perdeu todas as peças
+            Vitoria(!turnoJogador2); 
     }
 }
 
@@ -118,7 +123,14 @@ function ColocarPeca(div, posicao) {
 
     podeColocarPeca = false;
 
+    // Desconta uma peça do jogador
     pecas[+turnoJogador2]--;
+    if(turnoJogador2) {
+        contadorVerde.innerHTML = (parseInt(contadorVerde.innerHTML) - 1).toString();
+    }
+    else {
+        contadorLaranja.innerHTML = (parseInt(contadorLaranja.innerHTML) - 1).toString();
+    }
 }
 
 function SelecionarPeca(div, posicao) {
@@ -256,21 +268,21 @@ function ChecarVitoriaPecas(posicao) {
     // Checar diagonal 2
     for (let i = 0; i < 4; i++) {
         // Os índices da segunda diagonal são 3, 6, 9 e 12
-        if (tabuleiro[i + i * 3] != +turnoJogador2) vitoriaPorDiagonal2 = false;
+        if (tabuleiro[3 + i * 3] != +turnoJogador2) vitoriaPorDiagonal2 = false;
     }
 
     return (vitoriaPorColuna || vitoriaPorLinha || vitoriaPorDiagonal1 || vitoriaPorDiagonal2);
 }
 
-function Vitoria() {
+function Vitoria(jogador) {
     // Imprime vitória na tela e impede de clicar no tabuleiro
     let div = document.createElement("div");
     div.innerHTML = "VITÓRIA DAS";
     vitoria.appendChild(div);
 
     div = document.createElement("div");
-    div.innerHTML = !turnoJogador2 ? "LARANJAS" : "VERDES";
-    div.className = "cor-jogador-" + ((+turnoJogador2) + 1).toString();
+    div.innerHTML = !jogador ? "LARANJAS" : "VERDES";
+    div.className = "cor-jogador-" + ((+jogador) + 1).toString();
     vitoria.appendChild(div);
 
     gameBoard.style.pointerEvents = "none";
@@ -286,6 +298,7 @@ function ReiniciarJogo() {
 
     gameBoard.querySelectorAll('.game-item').forEach(element => {
         element.style.backgroundColor = "rgb(15, 15, 15)";
+        element.style.border = "0px solid black"; // Caso a borda tenha sido sinalizada
     });
 
     turnoJogador2 = false;
@@ -296,6 +309,9 @@ function ReiniciarJogo() {
     turno.innerHTML = "laranjas";
     turno.className = "cor-jogador-1";
     gameBoard.style.pointerEvents = "auto";
+
+    contadorLaranja.innerHTML = "12";
+    contadorVerde.innerHTML = "12";
 
     ReiniciarFlagsAcoes();
     ReiniciarFlagsComer();

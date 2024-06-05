@@ -72,6 +72,15 @@ button:active {
     padding-left: 2px;
 }
 
+img {
+    width: 32px;
+    height: 32px;
+}
+
+.contador-pecas {
+    display: flex;
+}
+
 .cor-jogador-1 {
     padding-left: 7px;
     color: var(--jogador1-cor);
