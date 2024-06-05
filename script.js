@@ -60,8 +60,6 @@ botaoTurno.addEventListener("click", TrocaTurno);
 botaoReiniciar.addEventListener("click", ReiniciarJogo);
 botaoAjuda.addEventListener("click", Ajuda);
 
-Ajuda();
-
 // Atualiza os divs para o tabuleiro
 for (let i = 0; i < 16; i++) {
     const div = document.getElementById("peca" + (i).toString());
