@@ -45,7 +45,7 @@ button:active {
 }
 
 .bar {
-    width: 90%;
+    width: 100%;
     max-width: 400px;
     display: flex;
     margin: auto;
@@ -92,7 +92,7 @@ img {
 }
 
 .game-board {
-    width: 90%;
+    width: 100%;
     max-width: 400px;
     height: 400px;
     margin: auto;
@@ -115,7 +115,7 @@ img {
 }
 
 .game-item {
-    width: 90%;
+    width: 100%;
     height: 90%;
     background-color: var(--board-grey);
     border-radius: 50px;
@@ -190,7 +190,7 @@ ul {
 
 .victory {
     padding-top: 10px;
-    width: 90%;
+    width: 100%;
     max-width: 400px;
     margin: auto;
     display: flex;
