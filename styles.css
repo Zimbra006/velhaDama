@@ -31,6 +31,8 @@ button {
     transition-duration: 0.2s;
     width: 32px;
     height: 32px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
 }
 
 button:hover {
@@ -110,6 +112,8 @@ button:active {
     border-radius: 50px;
     cursor: pointer;
     transition-duration: 0.2s;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
 }
 
 .game-item:active {
