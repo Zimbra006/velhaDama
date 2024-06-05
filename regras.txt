@@ -1,0 +1,28 @@
+=== BÁSICO === 
+O tabuleiro tem 16 espaços, dispostos em uma malha 4x4.
+
+=== PREPARAÇÕES === 
+Cada jogador recebe 12 peças.
+
+=== TURNO ===
+Na sua rodada, o jogador deve realizar ao menos uma de três ações:
+
+1. Colocar uma peça no tabuleiro.
+O jogador pode colocar uma peça em qualquer espaço desocupado no tabuleiro.
+
+2. Comer uma peça do adversário.
+O jogador pode escolher uma de suas peças para comer uma peça do adversário.
+Apenas uma peça pode ser escolhida por ação.
+Comer funciona como no jogo de Damas, onde a peça comida é "saltada" pela peça que vai comer.
+O espaço onde a peça vai para precisa estar desocupado.
+A mesma peça NÃO PODE comer múltiplas peças.
+A terceira ação só pode ser realizada após essa ação.
+
+3. Substituir uma peça comida
+Após comer uma peça adversária, o jogador pode colocar uma de suas peças
+no lugar da peça comida.
+
+=== VITÓRIA === 
+Um jogador ganha o jogo em duas situações:
+a) Uma coluna, linha ou diagonal está inteiramente preenchida com suas peças.
+b) O jogador adversário não possui mais peças. (NÃO IMPLEMENTADA)

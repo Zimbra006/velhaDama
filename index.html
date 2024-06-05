@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&amp;display=swap">
+
+    <title>Velha Dama</title>
+    <link rel="icon" href="icone.png">
+</head>
+
+<body>
+    <div id="game-wrapper">
+        <div class="top bar">
+            <button type="button" id="reiniciarJogo">
+                <span class="material-symbols-rounded">refresh</span>
+            </button>
+            <div class="title">
+                <div class="title-left">VELHA</div>
+                <div class="title-right">DAMA</div>
+            </div>
+            <button type="button" id="ajuda">
+                <span class="material-symbols-rounded">help</span>
+            </button>
+        </div>
+        <div class="game-board">
+            <div class="game-item-wrapper" style="border-top: 0; border-left: 0;">
+                <div class="game-item" id="peca0"></div>
+            </div>
+            <div class="game-item-wrapper" style="border-top: 0;">
+                <div class="game-item" id="peca1"></div>
+            </div>
+            <div class="game-item-wrapper" style="border-top: 0;">
+                <div class="game-item" id="peca2"></div>
+            </div>
+            <div class="game-item-wrapper" style="border-top: 0; border-right: 0;">
+                <div class="game-item" id="peca3"></div>
+            </div>
+            <div class="game-item-wrapper" style="border-left: 0;">
+                <div class="game-item" id="peca4"></div>
+            </div>
+            <div class="game-item-wrapper">
+                <div class="game-item" id="peca5"></div>
+            </div>
+            <div class="game-item-wrapper">
+                <div class="game-item" id="peca6"></div>
+            </div>
+            <div class="game-item-wrapper" style="border-right: 0;">
+                <div class="game-item" id="peca7"></div>
+            </div>
+            <div class="game-item-wrapper" style="border-left: 0;">
+                <div class="game-item" id="peca8"></div>
+            </div>
+            <div class="game-item-wrapper">
+                <div class="game-item" id="peca9"></div>
+            </div>
+            <div class="game-item-wrapper">
+                <div class="game-item" id="peca10"></div>
+            </div>
+            <div class="game-item-wrapper" style="border-right: 0;">
+                <div class="game-item" id="peca11"></div>
+            </div>
+            <div class="game-item-wrapper" style="border-bottom: 0; border-left: 0;">
+                <div class="game-item" id="peca12"></div>
+            </div>
+            <div class="game-item-wrapper" style="border-bottom: 0;">
+                <div class="game-item" id="peca13"></div>
+            </div>
+            <div class="game-item-wrapper" style="border-bottom: 0;">
+                <div class="game-item" id="peca14"></div>
+            </div>
+            <div class="game-item-wrapper" style="border-bottom: 0; border-right: 0;">
+                <div class="game-item" id="peca15"></div>
+            </div>
+        </div>
+
+        <div class="botom bar">
+            <div class="indicador-turno">
+                <div> Turno das </div>
+                <div id="turno" class="cor-jogador-1"> laranjas </div>
+            </div>
+            <button type="button" id="acabarTurno" style="margin-right: 10px;">
+                <span class="material-symbols-rounded">check</span>
+            </button>
+        </div>
+
+        <div id="vitoria" class="victory"></div>
+    </div>
+
+    <!-- <div class="painel-ajuda-fundo">
+        <div class="painel-ajuda-wrapper">
+            <div class="painel-ajuda">
+                <p>Cada jogador recebe 12 peças.</p>
+                <p>No seu turno, ao menos uma de três ações deve acontecer:</p>
+                <p>1. Colocar uma peça</p>
+                <p>2. Comer uma peça do adversário
+                    (Se você não tiver colocado uma peça,
+                    não poderá colocar após ter comido outra peça)
+                    (Apenas uma ação de comer pode acontecer por turno)
+                </p>
+                <p>3. Substituir uma peça comida.
+                    (Após comer uma peça adversária, você pode colocar uma das
+                    suas peças no lugar da peça comida).
+                </p>
+                <p>Ganha o primeiro jogador a completar uma linha, coluna ou diagonal com suas peças.</p>
+                <p>Se um jogador não tiver mais peças, a vitória é do jogador que ainda tiver peças.</p>
+            </div>
+        </div>
+    </div> -->
+</body>
+
+</html>
