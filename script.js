@@ -381,7 +381,7 @@ function Ajuda() {
     divTexto.appendChild(texto);
 
     texto = document.createElement("p");
-    texto.innerHTML = "Cada jogador recebe 12 peças.";
+    texto.innerHTML = "Cada jogador possuí 12 peças.";
     divTexto.appendChild(texto);
 
     // Cria espaço entre as linhas
@@ -401,11 +401,11 @@ function Ajuda() {
 
     var lista = document.createElement("ul");
     texto = document.createElement("li");
-    texto.innerHTML = "Se você não tiver colocado uma peça, não poderá colocar após ter comido outra peça";
+    texto.innerHTML = "Se você não tiver colocado uma peça, não poderá colocar após esta ação.";
     lista.appendChild(texto);
 
     texto = document.createElement("li");
-    texto.innerHTML = "Apenas uma ação de comer pode acontecer por turno";
+    texto.innerHTML = "Apenas uma ação de comer pode acontecer por turno.";
     lista.appendChild(texto);
 
     divTexto.appendChild(lista);
@@ -416,29 +416,56 @@ function Ajuda() {
 
     lista = document.createElement("ul");
     texto = document.createElement("li");
-    texto.innerHTML = "Após comer uma peça adversária, você pode colocar uma das suas peças no lugar da peça comida";
+    texto.innerHTML = "Após comer uma peça adversária, você pode colocar uma das suas peças no lugar da peça comida.";
     lista.appendChild(texto);
 
     divTexto.appendChild(lista);
 
+    var divTemp = document.createElement("div");
+    divTemp.style.display = "flex";
+
+    texto = document.createElement("p");
+    texto.innerHTML = "Para terminar seu turno, clique no botão";
+    divTemp.appendChild(texto);
+
+    texto = document.createElement("span");
+    texto.className = "material-symbols-rounded";
+    texto.innerHTML = "check";
+    divTemp.appendChild(texto);
+
+    divTexto.appendChild(divTemp);
+    
     // Cria espaço entre as linhas
     divTexto.appendChild(document.createElement("br"));
 
     texto = document.createElement("p");
-    texto.innerHTML = "Ganha o primeiro jogador a completar uma linha, coluna ou diagonal com suas peças.";
+    texto.innerHTML = "Ganha o primeiro jogador a completar uma linha, coluna ou diagonal.";
     divTexto.appendChild(texto);
 
     texto = document.createElement("p");
-    texto.innerHTML = "Se um jogador não tiver mais peças, a vitória é do jogador que ainda tiver peças.";
-    divTexto.appendChild(texto);
-
-    texto = document.createElement("p");
-    texto.innerHTML = "Se um jogador não tiver mais peças, mas ele tiver completado uma sequência de peças, ele ganha.";
+    texto.innerHTML = "Se um jogador não tiver mais peças e não tiver completado uma sequência de peças descrita acima, a vitória é do outro jogador.";
     divTexto.appendChild(texto);
 
     texto = document.createElement("p");
     texto.innerHTML = "É considerado empate quando todo o tabuleiro tiver sido preenchido mas nenhum jogador tiver ganhado.";
     divTexto.appendChild(texto);
+
+    // Cria espaço entre as linhas
+    divTexto.appendChild(document.createElement("br"));
+
+    var divTemp = document.createElement("div");
+    divTemp.style.display = "flex";
+
+    texto = document.createElement("p");
+    texto.innerHTML = "Para reiniciar o jogo, clique no botão";
+    divTemp.appendChild(texto);
+
+    texto = document.createElement("span");
+    texto.className = "material-symbols-rounded";
+    texto.innerHTML = "refresh";
+    divTemp.appendChild(texto);
+
+    divTexto.appendChild(divTemp);
 
     divWrapper.appendChild(divTexto);
     divFundo.appendChild(divWrapper);
@@ -449,6 +476,8 @@ function Ajuda() {
     }
     // Adiciona esse painel ao corpo
     document.body.appendChild(divFundo);
+
+    
 
     // Impede o click no resto da tela
     document.getElementById("game-wrapper").style.pointerEvents = "none";
