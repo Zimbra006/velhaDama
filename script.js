@@ -24,6 +24,10 @@ let pecaSelecionada = -1;
 // Array para armazenar quais peças podem ser comidas
 let pecasPraComer = [-1, -1, -1];
 
+// FLAG RELACIONADA À AÇÃO DE SUBSTITUIR
+
+let divSinalizado = null;
+
 
 // Array que armazena uma cópia (mais simples e acessível) do tabuleiro
 /* Legenda:
@@ -119,7 +123,7 @@ function ColocarPeca(div, posicao) {
     tabuleiro[posicao] = +turnoJogador2; // Preenche o espaço no tabuleiro de acordo com o turno
 
     div.style.backgroundColor = cores[+turnoJogador2];
-    div.style.border = "0px solid black"; // Reinicia a borda caso ela tenha sido sinalizada
+    div.style.border = "0px solid black"; // Caso a peça tenha sido colocada num espaço sinalizado
 
     podeColocarPeca = false;
 
@@ -211,6 +215,7 @@ function ComerPeca(divComida, posicao) {
     // Indicar que pode colocar peça no tabuleiro
     let rgbValues = cores[+turnoJogador2].substring(4, cores[+turnoJogador2].length - 1);
     divComida.style.border = "5px solid rgba(" + rgbValues + ", 0.3)";
+    divSinalizado = divComida;
 }
 
 function ReiniciarFlagsComer() {
@@ -228,8 +233,14 @@ function TrocaTurno() {
     turno.innerHTML = turnoJogador2 ? "laranjas" : "verdes";
     turnoJogador2   = !turnoJogador2;
     turno.className = "cor-jogador-" + ((+turnoJogador2) + 1).toString();
-    podeColocarPeca = true;
-    podeComer = true;
+
+    ReiniciarFlagsAcoes();
+
+    // Tira a sinalização da última borda sinalizada
+    if (divSinalizado) {
+        divSinalizado.style.border = "0px solid black";
+        divSinalizado = null;
+    }
 }
 
 function ChecarVitoriaExausto() {
@@ -298,8 +309,13 @@ function ReiniciarJogo() {
 
     gameBoard.querySelectorAll('.game-item').forEach(element => {
         element.style.backgroundColor = "rgb(15, 15, 15)";
-        element.style.border = "0px solid black"; // Caso a borda tenha sido sinalizada
     });
+
+    // Tira a sinalização da última borda sinalizada
+    if (divSinalizado) {
+        divSinalizado.style.border = "0px solid black";
+        divSinalizado = null;
+    }
 
     turnoJogador2 = false;
     pecas = [12, 12];
