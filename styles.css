@@ -45,12 +45,12 @@ button:active {
 }
 
 .bar {
-    width: 100%;
+    width: 90%;
     max-width: 400px;
     display: flex;
     margin: auto;
     justify-content: space-between;
-    margin-top: 10px;
+    padding-top: 10px;
 }
 
 .title {
@@ -92,7 +92,7 @@ img {
 }
 
 .game-board {
-    width: 100%;
+    width: 90%;
     max-width: 400px;
     height: 400px;
     margin: auto;
@@ -156,7 +156,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 90%;
     height: 100svh;
     position: fixed;
     z-index: 1000;
@@ -185,7 +185,7 @@ img {
 
 .victory {
     padding-top: 10px;
-    width: 100%;
+    width: 90%;
     max-width: 400px;
     margin: auto;
     display: flex;
